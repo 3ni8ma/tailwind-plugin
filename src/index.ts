@@ -1,4 +1,4 @@
-// Build: 2026-07-01 19:30:07 | run 1782948607
+// Build: 2026-07-01 20:00:06 | run 1782950406
 import plugin from "tailwindcss/plugin.js";
 
 interface PluginOptions {
