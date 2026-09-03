@@ -1,6 +1,14 @@
 # @3ni8ma/tailwind-plugin
 
-Additional utility classes for Tailwind CSS — glassmorphism, text gradients, masks, and glow effects.
+[![npm version](https://img.shields.io/npm/v/@3ni8ma/tailwind-plugin)](https://www.npmjs.com/package/@3ni8ma/tailwind-plugin)
+[![license](https://img.shields.io/npm/l/@3ni8ma/tailwind-plugin)](LICENSE)
+[![downloads](https://img.shields.io/npm/dm/@3ni8ma/tailwind-plugin)](https://www.npmjs.com/package/@3ni8ma/tailwind-plugin)
+
+Additional utility classes for Tailwind CSS — glassmorphism, text gradients, glow effects, masks, and design tokens. One plugin, zero config, works with any Tailwind project.
+
+## Why
+
+Building glassmorphism from scratch means writing 10+ lines of backdrop-filter, rgba, and border properties every time. This plugin gives you `.glass`, `.glow-4`, `.text-gradient`, and more — drop-in classes that just work.
 
 ## Installation
 
@@ -20,155 +28,86 @@ export default {
 }
 ```
 
-### Utilities
+### Custom glow color
+
+```js
+import glassmorphism from '@3ni8ma/tailwind-plugin'
+
+export default {
+  plugins: [
+    glassmorphism({ glowColor: '16, 185, 129' }), // emerald
+  ],
+}
+```
+
+## Utilities
+
+### Glassmorphism
 
 | Class | Effect |
 |-------|--------|
-| `.glass` | Frosted glass background (light) |
-| `.glass-dark` | Frosted glass background (dark) |
-| `.glass-strong` | Stronger frosted glass effect |
-| `.text-gradient` | Transparent fill text for gradient backgrounds |
+| `.glass` | Frosted glass — light, subtle transparency |
+| `.glass-dark` | Frosted glass — dark mode friendly |
+| `.glass-strong` | Heavier blur + more opacity for emphasis |
+
+```html
+<div class="glass rounded-2xl p-6">
+  <h2 class="text-gradient bg-gradient-to-r from-pink-500 to-violet-500">
+    Frosted card
+  </h2>
+</div>
+```
+
+### Text
+
+| Class | Effect |
+|-------|--------|
+| `.text-gradient` | Transparent fill — pair with any gradient background |
+| `.text-gradient-animate` | Same, with a looping gradient-shift animation |
+| `.text-shadow` | Subtle drop shadow |
+| `.text-shadow-lg` | Heavier drop shadow |
+
+```html
+<h1 class="text-gradient bg-gradient-to-r from-cyan-500 to-blue-500 text-4xl font-bold">
+  Gradient heading
+</h1>
+```
+
+### Masks
+
+| Class | Effect |
+|-------|--------|
 | `.mask-fade-bottom` | Fade out towards bottom |
 | `.mask-fade-top` | Fade out towards top |
 | `.mask-fade-sides` | Fade out on left and right edges |
-| `.glow-{size}` | Blue glow box-shadow (e.g. `.glow-4`) |
+
+```html
+<img class="mask-fade-bottom w-full" src="hero.jpg" alt="" />
+```
+
+### Glow
+
+Dynamic — uses Tailwind's spacing scale:
+
+```html
+<button class="glow-4 bg-blue-600 text-white px-6 py-3 rounded-lg">
+  Glowing button
+</button>
+<button class="glow-8 bg-emerald-600 text-white px-6 py-3 rounded-lg">
+  Bigger glow
+</button>
+```
+
+### Extras
+
+| Class | Effect |
+|-------|--------|
+| `.border-gradient` | Gradient border (pink → indigo → cyan) |
+| `.noise` | Subtle noise texture overlay |
+| `.backdrop-blur-sm` | 4px backdrop blur |
+| `.backdrop-blur-lg` | 16px backdrop blur |
+| `.backdrop-blur-xl` | 24px backdrop blur |
 
 ## License
 
 MIT
-
-<!-- ach: 2026-07-10 18:00:43 -->
-
-<!-- ach: 2026-07-10 20:30:20 -->
-
-<!-- ach: 2026-07-10 23:00:21 -->
-
-<!-- ach: 2026-07-12 17:30:06 -->
-
-<!-- ach: 2026-07-12 22:31:06 -->
-
-<!-- ach: 2026-07-13 01:00:12 -->
-
-<!-- ach: 2026-07-13 03:30:46 -->
-
-<!-- ach: 2026-07-13 16:00:31 -->
-
-<!-- ach: 2026-07-13 18:32:14 -->
-
-<!-- ach: 2026-07-13 21:00:47 -->
-
-<!-- ach: 2026-07-13 23:30:07 -->
-
-<!-- ach: 2026-07-14 02:00:14 -->
-
-<!-- ach: 2026-07-14 14:33:54 -->
-
-<!-- ach: 2026-07-15 03:00:56 -->
-
-<!-- ach: 2026-07-15 13:00:02 -->
-
-<!-- ach: 2026-07-15 20:32:11 -->
-
-<!-- ach: 2026-07-15 23:00:30 -->
-
-<!-- ach: 2026-07-16 01:30:10 -->
-
-<!-- ach: 2026-07-16 14:00:02 -->
-
-<!-- ach: 2026-07-16 19:00:04 -->
-
-<!-- ach: 2026-07-16 21:30:12 -->
-
-<!-- ach: 2026-07-17 02:30:08 -->
-
-<!-- ach: 2026-07-17 17:30:18 -->
-
-<!-- ach: 2026-07-17 22:30:10 -->
-
-<!-- ach: 2026-07-18 01:00:11 -->
-
-<!-- ach: 2026-07-18 16:25:38 -->
-
-<!-- ach: 2026-07-19 02:00:08 -->
-
-<!-- ach: 2026-07-19 17:00:07 -->
-
-<!-- ach: 2026-07-19 19:30:08 -->
-
-<!-- ach: 2026-07-20 13:00:25 -->
-
-<!-- ach: 2026-07-20 15:30:03 -->
-
-<!-- ach: 2026-07-20 20:30:19 -->
-
-<!-- ach: 2026-07-21 01:30:06 -->
-
-<!-- ach: 2026-07-21 14:00:20 -->
-
-<!-- ach: 2026-07-21 19:01:39 -->
-
-<!-- ach: 2026-07-21 21:31:08 -->
-
-<!-- ach: 2026-07-22 00:00:41 -->
-
-<!-- ach: 2026-07-22 02:30:18 -->
-
-<!-- ach: 2026-07-22 12:30:54 -->
-
-<!-- ach: 2026-07-22 20:00:23 -->
-
-<!-- ach: 2026-07-23 13:32:22 -->
-
-<!-- ach: 2026-07-23 21:00:34 -->
-
-<!-- ach: 2026-07-23 23:30:54 -->
-
-<!-- ach: 2026-07-24 02:00:09 -->
-
-<!-- ach: 2026-07-24 14:30:16 -->
-
-<!-- ach: 2026-07-25 00:30:14 -->
-
-<!-- ach: 2026-07-25 13:01:36 -->
-
-<!-- ach: 2026-07-25 18:00:16 -->
-
-<!-- ach: 2026-07-25 20:30:21 -->
-
-<!-- ach: 2026-07-27 15:00:04 -->
-
-<!-- ach: 2026-07-27 17:30:05 -->
-
-<!-- ach: 2026-07-27 22:30:18 -->
-
-<!-- ach: 2026-07-28 01:00:02 -->
-
-<!-- ach: 2026-07-28 16:00:11 -->
-
-<!-- ach: 2026-07-28 18:30:21 -->
-
-<!-- ach: 2026-07-28 21:00:34 -->
-
-<!-- ach: 2026-07-29 14:30:13 -->
-
-<!-- ach: 2026-07-29 19:30:33 -->
-
-<!-- ach: 2026-07-30 20:30:13 -->
-
-<!-- ach: 2026-07-31 19:00:55 -->
-
-<!-- ach: 2026-07-31 21:30:30 -->
-
-<!-- ach: 2026-08-01 00:00:12 -->
-
-<!-- ach: 2026-08-01 02:30:11 -->
-
-<!-- ach: 2026-08-01 17:30:40 -->
-
-<!-- ach: 2026-08-01 20:00:32 -->
-
-<!-- ach: 2026-08-01 22:30:08 -->
-
-<!-- ach: 2026-08-02 16:00:08 -->
-
-<!-- ach: 2026-08-02 21:00:31 -->
