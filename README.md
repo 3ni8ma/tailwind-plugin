@@ -113,3 +113,5 @@ Dynamic — uses Tailwind's spacing scale:
 MIT
 
 <!-- ach: 2026-09-03 20:31:39 -->
+
+<!-- ach: 2026-09-04 14:00:13 -->
