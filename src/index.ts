@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin.js";
-// Build: 2026-11-25 18:00:13 | run 1795647613
+// Build: 2026-11-25 18:30:10 | run 1795649410
 
 interface PluginOptions {
   glowColor?: string;
